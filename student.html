@@ -1,0 +1,151 @@
+<html>
+<title></title>
+
+<body>
+
+    <table>
+        <tr>
+            <td>SUBJECT</td>
+            <td>TOTAL MARKS </td>
+            <td>OBTAIN MARKS </td>
+            <td>PERCENTAGE</td>
+            <td>
+                <center>GRADING</center>
+            </td>
+        </tr>
+        <tr>
+            <td>ENGLISH</td>
+            <td>
+                <center>
+                    <p>100</p>
+                </center>
+            </td>
+
+
+
+            <td id="d1"></td>
+
+            <td id="e1"></td>
+
+        </tr>
+        <tr>
+            <td>
+                Math
+            </td>
+            <td>
+                <center>
+                    <p>100</p>
+                </center>
+            </td>
+            <td id="d2"></td>
+            <td id="e2"></td>
+
+        </tr>
+        <tr>
+            <td>
+                URDU
+            </td>
+            <td>
+                <center>
+                    <p>100</p>
+                </center>
+            </td>
+            <td id="d3"></td>
+            <td id="e3"></td>
+
+        </tr>
+        <tr>
+            <td>TOTAL MARKS & PERCENTAGE</td>
+            <td>
+                <center id="d4">
+
+                </center>
+            </td>
+            <td id="d5">
+
+            </td>
+            <td id="d6">
+
+            </td>
+            <td id="grad"></td>
+        </tr>
+    </table>
+    
+    <input type="text" id="value1" name="val1"> <br>
+    <input type="text" id="value2" name="val2"> <br>
+
+    <select name="" id="checked">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <section>
+
+    </section>
+    <button type="button" onclick="check();">Check</button>
+    <input type="text" value="" id="check">
+
+    <script>
+        
+        let x = document.getElementById("d1").innerText = +prompt("Enter marks In English");
+        let y = document.getElementById("d2").innerText = +prompt("Enter marks In Math");
+        let z = document.getElementById("d3").innerText = +prompt("Enter marks In Urdu");
+        var marks = 300;
+        var total = x + y + z;
+        var fix = total / 300 * 100;
+        var percen = fix.toFixed(2);
+
+        document.getElementById("e1").innerHTML = x + "%";
+        document.getElementById("e2").innerHTML = y + "%";
+        document.getElementById("e3").innerHTML = z + "%";
+        document.getElementById("d4").innerHTML = marks;
+        document.getElementById("d5").innerHTML = total;
+        document.getElementById("d6").innerHTML = percen + "%";
+        if (percen > 90) {
+            document.getElementById("grad").innerHTML = "Youre passed with A-1 grade";
+        }
+        else if (percen > 80 && percen <= 90) {
+            document.getElementById("grad").innerHTML = "Youre passed with A grade";
+        }
+        else if (percen > 60 && percen <= 80) {
+            document.getElementById("grad").innerHTML = "Youre passed with B grade";
+        }
+        else if (percen > 50 && percen <= 60) {
+            document.getElementById("grad").innerHTML = "Youre passed with C grade";
+        }
+        else {
+            document.getElementById("grad").innerHTML = "Youre Fail";
+        }
+        document.write("<br/>")
+
+
+        function check() {
+            var num1 = document.getElementById("value1").value;
+            var x = parseFloat(num1);
+            var num2 = document.getElementById("value2").value;
+            var y = parseFloat(num2);
+            var z = document.getElementById("checked").value;
+            if (z === "+") {
+
+                document.getElementById("check").value = x + y;
+            }
+            else if (z === "-") {
+                document.getElementById("check").value = x - y;
+            }
+            else if (z === "*") {
+                document.getElementById("check").value = x * y;
+            }
+            else if (z === "/") {
+                document.getElementById("check").value = x / y;
+            }
+          
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
